@@ -182,7 +182,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
             </span>
           </Button>
 
-          <Link
+         {/* <Link
             color="inherit"
             variant="body2"
             target="_blank"
@@ -193,7 +193,10 @@ export function HomeHero({ sx, ...other }: BoxProps) {
           >
             <Iconify width={16} icon="eva:external-link-fill" />
             Get free version
-          </Link>
+          </Link> */}
+
+
+
         </Stack>
       </m.div>
 
@@ -301,7 +304,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
 
           {/* <m.div style={{ y: y3 }}>{renderRatings()}</m.div> */}
           <m.div style={{ y: y4 }}>{renderButtons()}</m.div>
-          <m.div style={{ y: y5 }}>{renderIcons()}</m.div>
+          {/* <m.div style={{ y: y5 }}>{renderIcons()}</m.div> */}
         </Container>
 
         <HeroBackground />
