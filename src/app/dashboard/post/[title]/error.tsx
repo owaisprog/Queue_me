@@ -1,9 +1,12 @@
 'use client';
 
 import Button from '@mui/material/Button';
+
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
+
 import { DashboardContent } from 'src/layouts/dashboard';
+
 import { Iconify } from 'src/components/iconify';
 import { EmptyContent } from 'src/components/empty-content';
 
@@ -13,18 +16,15 @@ export default function Error({
   error,
   reset,
 }: {
-  error: Error & { digest?: string };
+  error: Error; // Removed the `digest` property
   reset: () => void;
 }) {
-  // Ensure error is an instance of Error
-  const errorMessage = error instanceof Error ? error.message : 'Something went wrong!';
-  const errorDigest = error instanceof Error ? error.digest : undefined;
-
   return (
     <DashboardContent maxWidth={false}>
       <EmptyContent
         filled
-        title={errorMessage}
+        title="Something went wrong!"
+        description={error.message} // Display the error message
         action={
           <Button
             component={RouterLink}
