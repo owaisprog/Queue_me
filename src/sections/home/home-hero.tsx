@@ -84,22 +84,22 @@ export function HomeHero({ sx, ...other }: BoxProps) {
         excellence with
         <Box
           component={m.span}
-          animate={{ backgroundPosition: '200% center' }}
+          animate={{ backgroundPositionX: '200%' }}
           transition={{
             duration: 20,
-            ease: 'linear',
+            ease: 'circOut',
             repeat: Infinity,
             repeatType: 'reverse',
           }}
           sx={{
             ...theme.mixins.textGradient(
-              `300deg, ${theme.vars.palette.primary.main} 0%, ${theme.vars.palette.warning.main} 25%, ${theme.vars.palette.primary.main} 50%, ${theme.vars.palette.warning.main} 75%, ${theme.vars.palette.primary.main} 100%`
+             ` 300deg, ${theme.vars.palette.primary.main} 0%, ${theme.vars.palette.warning.main} 25%, ${theme.vars.palette.primary.main} 50%, ${theme.vars.palette.warning.main} 75%, ${theme.vars.palette.primary.main} 100%`
             ),
             backgroundSize: '400%',
             ml: { xs: 0.75, md: 1, xl: 1.5 },
           }}
         >
-        Queue Me
+          Queue Me
         </Box>
       </Box>
     </m.div>
@@ -295,8 +295,8 @@ export function HomeHero({ sx, ...other }: BoxProps) {
           }}
         >
           <Stack spacing={3} sx={{ textAlign: 'center' }}>
-            <m.div style={{ y: y1 }}>{renderHeading()}</m.div>
-            <m.div style={{ y: y2 }}>{renderText()}</m.div>
+          <m.div style={{ y: y1 }}>{renderHeading()}</m.div>
+          <m.div style={{ y: y2 }}>{renderText()}</m.div>
           </Stack>
 
           {/* <m.div style={{ y: y3 }}>{renderRatings()}</m.div> */}
