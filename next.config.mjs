@@ -35,18 +35,16 @@
 
 // export default nextConfig;
 
-
 /**
  * @type {import('next').NextConfig}
  */
 
-// Use an environment variable to determine if static export is enabled
-const isStaticExport = process.env.BUILD_STATIC_EXPORT === 'true';
+const isStaticExport = false;
 
 const nextConfig = {
   trailingSlash: true,
   env: {
-    BUILD_STATIC_EXPORT: isStaticExport ? 'true' : 'false',
+    BUILD_STATIC_EXPORT: isStaticExport,
   },
   modularizeImports: {
     '@mui/icons-material': {
@@ -67,12 +65,8 @@ const nextConfig = {
 
     return config;
   },
-  // Enable static export if BUILD_STATIC_EXPORT is true
-  ...(isStaticExport && {
+  ...(isStaticExport === true && {
     output: 'export',
-    images: {
-      unoptimized: true, // Disable image optimization for static export
-    },
   }),
 };
 
